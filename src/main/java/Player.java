@@ -23,7 +23,20 @@ public class Player {
         this.hand.add(card);
     }
 
+
+
     public Card showHand() {
-        return this.hand.get(0);
+        Card highestCard = getHighestCard();
+        return highestCard;
+    }
+
+    public Card getHighestCard() {
+        Card highCard = new Card(SuitType.DIAMONDS, RankType.ACE);
+        for (Card card : this.hand) {
+            if (card.getRank().getValue() >= highCard.getRank().getValue()) {
+                highCard = card;
+            }
+        }
+        return highCard;
     }
 }

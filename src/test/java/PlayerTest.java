@@ -41,4 +41,13 @@ public class PlayerTest {
         assertEquals(card.getRank(), player1.showHand().getRank());
     }
 
+    @Test
+    public void canShowHighestCard(){
+        Card card = new Card(SuitType.DIAMONDS, RankType.ACE);
+        Card card2 = new Card(SuitType.DIAMONDS, RankType.KING);
+        player1.takeCard(card);
+        player1.takeCard(card2);
+        assertEquals(card2.getRank(), player1.getHighestCard().getRank());
+    }
+
 }

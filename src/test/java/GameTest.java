@@ -40,24 +40,12 @@ public class GameTest {
         assertEquals(0, game.getDeck().getCards().size());
     }
 
-    @Test
-    public void startingGamePopulatesDeck(){
-        game.start();
-        assertEquals(52, game.getDeck().getCards().size());
-    }
 
     @Test
     public void startingGameDealsCards(){
         game.start();
-        assertEquals(1, player1.getHand().size());
-        assertEquals(1, player2.getHand().size());
-    }
-
-    @Test
-    public void canShowWinner(){
-        deck.populate();
-        game.dealCards();
-        assertEquals("Jake wins", game.showWinner());
+        assertEquals(2, player1.getHand().size());
+        assertEquals(2, player2.getHand().size());
     }
 
     @Test
